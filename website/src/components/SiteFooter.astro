@@ -1,0 +1,142 @@
+---
+import { siteBasePath } from '../paths';
+
+const portfolio = 'https://ysskrishna.vercel.app';
+
+const exploreLinks = [
+  { label: 'Latest Projects', href: `${portfolio}/products?latest=true` },
+  {
+    label: 'Google Workspace Add-ons',
+    href: `${portfolio}/products?category=google-workspace-add-ons`,
+  },
+  {
+    label: 'GitHub Marketplace Actions',
+    href: `${portfolio}/products?category=github-marketplace-actions`,
+  },
+  { label: 'PyPI packages', href: `${portfolio}/products?category=pypi-packages` },
+] as const;
+
+const siteLinks = [
+  { label: 'Privacy Policy', href: `${siteBasePath}privacy.html` },
+  { label: 'Terms of Service', href: `${siteBasePath}terms.html` },
+  { label: 'Support', href: `${siteBasePath}support.html` },
+  { label: 'Changelog', href: `${siteBasePath}changelog.html` },
+] as const;
+
+const socialLinks = [
+  { label: 'Website', href: portfolio, icon: 'globe' as const },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ysskrishna', icon: 'linkedin' as const },
+  { label: 'GitHub', href: 'https://github.com/ysskrishna', icon: 'github' as const },
+  { label: 'PyPI', href: 'https://pypi.org/user/ysskrishna', icon: 'pypi' as const },
+  { label: 'Product Hunt', href: 'https://www.producthunt.com/@ysskrishna', icon: 'producthunt' as const },
+];
+
+/** One place for mask-image URLs (avoids repeating define:vars on every scoped node). */
+const footerIconMaskStyle = [
+  `--mask-globe: url('${siteBasePath}assets/icons/globe.svg')`,
+  `--mask-linkedin: url('${siteBasePath}assets/icons/linkedin.svg')`,
+  `--mask-github: url('${siteBasePath}assets/icons/github.svg')`,
+  `--mask-pypi: url('${siteBasePath}assets/icons/pypi.svg')`,
+  `--mask-producthunt: url('${siteBasePath}assets/icons/producthunt.svg')`,
+].join(';');
+---
+
+<footer class="site-footer" style={footerIconMaskStyle}>
+  <div class="site-footer__inner">
+    <div class="site-footer__top">
+      <div class="site-footer__meta">
+        <p class="site-footer__made">
+          Made with
+          <img
+            class="site-footer__heart"
+            src={`${siteBasePath}assets/icons/heart.svg`}
+            alt=""
+            width="16"
+            height="16"
+            decoding="async"
+          />
+          by ysskrishna
+        </p>
+        <div class="site-footer__icons">
+          {
+            socialLinks.map(({ label, href, icon }) => (
+              <a
+                class="site-footer__icon-link"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+              >
+                <span class:list={['site-footer__icon-svg', `site-footer__icon-svg--${icon}`]} aria-hidden="true" />
+              </a>
+            ))
+          }
+        </div>
+        <p class="site-footer__copyright">© 2026 ysskrishna. All rights reserved.</p>
+      </div>
+      <div class="site-footer__explore">
+        <h3 class="site-footer__heading">Explore</h3>
+        <ul class="site-footer__list">
+          {
+            exploreLinks.map(({ label, href }) => (
+              <li>
+                <a class="site-footer__cat-link" href={href} target="_blank" rel="noopener noreferrer">
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="site-footer__site">
+        <h3 class="site-footer__heading">Legal & support</h3>
+        <ul class="site-footer__list">
+          {
+            siteLinks.map(({ label, href }) => (
+              <li>
+                <a class="site-footer__cat-link" href={href}>
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer__icon-svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
+    flex-shrink: 0;
+    background-color: currentColor;
+  }
+
+  .site-footer__icon-svg--globe {
+    -webkit-mask: var(--mask-globe) center / contain no-repeat;
+    mask: var(--mask-globe) center / contain no-repeat;
+  }
+
+  .site-footer__icon-svg--linkedin {
+    -webkit-mask: var(--mask-linkedin) center / contain no-repeat;
+    mask: var(--mask-linkedin) center / contain no-repeat;
+  }
+
+  .site-footer__icon-svg--github {
+    -webkit-mask: var(--mask-github) center / contain no-repeat;
+    mask: var(--mask-github) center / contain no-repeat;
+  }
+
+  .site-footer__icon-svg--pypi {
+    -webkit-mask: var(--mask-pypi) center / contain no-repeat;
+    mask: var(--mask-pypi) center / contain no-repeat;
+  }
+
+  .site-footer__icon-svg--producthunt {
+    -webkit-mask: var(--mask-producthunt) center / contain no-repeat;
+    mask: var(--mask-producthunt) center / contain no-repeat;
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const site = 'https://ysskrishna.github.io/google-sheets-text-power-tools';
+const pageUrl = `${site}/support.html`;
+
+const ldJson = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${site}/#website`,
+      name: 'Text Power Tools',
+      url: `${site}/`,
+    },
+    {
+      '@type': 'ContactPage',
+      '@id': `${pageUrl}#webpage`,
+      name: 'Support — Text Power Tools',
+      description:
+        'Get help with Text Power Tools: support contact details, issue reporting guidelines, and response expectations.',
+      url: pageUrl,
+      isPartOf: { '@id': `${site}/#website` },
+      inLanguage: 'en',
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Support — Text Power Tools"
+  description="Get help with Text Power Tools: support contact details, issue reporting guidelines, and response expectations."
+  canonical={pageUrl}
+  navKey="support"
+  mainClass="site-main--inner"
+  ogTitle="Support — Text Power Tools"
+  ogDescription="Support channels and issue-reporting guidance for Text Power Tools."
+  ogUrl={pageUrl}
+  twitterCard="summary"
+  ldJson={ldJson}
+>
+  <h1 class="page-title">Support</h1>
+  <p>For help with Text Power Tools, use one of the following channels:</p>
+  <ul>
+    <li>Email: <a href="mailto:sivasaikrishnassk@gmail.com">sivasaikrishnassk@gmail.com</a></li>
+    <li>
+      GitHub Issues:{' '}
+      <a href="https://github.com/ysskrishna/google-sheets-text-power-tools/issues">
+        https://github.com/ysskrishna/google-sheets-text-power-tools/issues
+      </a>
+    </li>
+  </ul>
+
+  <h2>Response Time</h2>
+  <p>
+    Support is provided on a best-effort basis. Typical response time is 3 to 5 business days, but faster or slower
+    responses can happen based on complexity and availability.
+  </p>
+
+  <h2>When Reporting an Issue</h2>
+  <ul>
+    <li>Describe what you expected to happen and what happened instead.</li>
+    <li>Include steps to reproduce the issue.</li>
+    <li>Share relevant screenshots or error messages.</li>
+    <li>Do not include sensitive spreadsheet data in public issue reports.</li>
+  </ul>
+  <p>For potential security vulnerabilities, report by email instead of posting public issue details.</p>
+
+  <h2>No Affiliation</h2>
+  <p>This add-on is an independent project and is not affiliated with, endorsed by, or sponsored by Google LLC.</p>
+</BaseLayout>

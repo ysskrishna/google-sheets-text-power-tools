@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import type { NavKey } from '../nav';
+import { siteBasePath } from '../paths';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  navKey: NavKey;
+  mainClass?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogUrl?: string;
+  ogImage?: string;
+  ogType?: string;
+  twitterCard?: 'summary' | 'summary_large_image';
+  twitterImage?: string;
+  ldJson?: Record<string, unknown>;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  navKey,
+  mainClass = '',
+  ogTitle = title,
+  ogDescription = description,
+  ogUrl = canonical,
+  ogImage,
+  ogType = 'website',
+  twitterCard = 'summary',
+  twitterImage,
+  ldJson,
+} = Astro.props;
+
+const ldString = ldJson ? JSON.stringify(ldJson) : null;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Y. Siva Sai Krishna" />
+
+    <link rel="icon" href={`${siteBasePath}assets/logos/icon32.png`} sizes="32x32" type="image/png" />
+    <link rel="icon" href={`${siteBasePath}assets/logos/icon48.png`} sizes="48x48" type="image/png" />
+    <link rel="icon" href={`${siteBasePath}assets/logos/icon96.png`} sizes="96x96" type="image/png" />
+    <link rel="apple-touch-icon" href={`${siteBasePath}assets/logos/icon128.png`} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Text Power Tools" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={ogUrl} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    {twitterImage && <meta name="twitter:image" content={twitterImage} />}
+
+    {ldString && <script type="application/ld+json" set:html={ldString} />}
+
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader navKey={navKey} />
+    <main id="main" class:list={['site-main', mainClass]}>
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

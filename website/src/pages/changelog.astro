@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { marked } from 'marked';
+
+const site = 'https://ysskrishna.github.io/google-sheets-text-power-tools';
+const pageUrl = `${site}/changelog.html`;
+
+const ldJson = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${site}/#website`,
+      name: 'Text Power Tools',
+      url: `${site}/`,
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${pageUrl}#webpage`,
+      name: 'Changelog — Text Power Tools',
+      description: 'Release history and updates for the Text Power Tools Google Sheets add-on.',
+      url: pageUrl,
+      isPartOf: { '@id': `${site}/#website` },
+      inLanguage: 'en',
+    },
+  ],
+};
+
+const mdUrl =
+  'https://cdn.jsdelivr.net/gh/ysskrishna/google-sheets-text-power-tools@main/CHANGELOG.md';
+const githubBlob =
+  'https://github.com/ysskrishna/google-sheets-text-power-tools/blob/main/CHANGELOG.md';
+
+let changelogHtml = '';
+let loadError = false;
+
+try {
+  const res = await fetch(mdUrl);
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+  changelogHtml = marked.parse(await res.text()) as string;
+} catch {
+  loadError = true;
+}
+---
+
+<BaseLayout
+  title="Changelog — Text Power Tools"
+  description="Release history and updates for the Text Power Tools Google Sheets add-on."
+  canonical={pageUrl}
+  navKey="changelog"
+  mainClass="site-main--inner"
+  ogTitle="Changelog — Text Power Tools"
+  ogDescription="Release notes and product updates for Text Power Tools."
+  ogUrl={pageUrl}
+  twitterCard="summary"
+  ldJson={ldJson}
+>
+  {
+    loadError ? (
+      <>
+        <h1 class="page-title">Changelog</h1>
+        <div class="changelog-body">
+          <p class="changelog-fallback">Could not load the changelog from the CDN at build time.</p>
+          <p>
+            <a href={githubBlob}>
+              View <code>CHANGELOG.md</code> on GitHub
+            </a>
+          </p>
+        </div>
+      </>
+    ) : (
+      <div class="changelog-body" set:html={changelogHtml} />
+    )
+  }
+</BaseLayout>
