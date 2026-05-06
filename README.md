@@ -84,15 +84,16 @@ Find patterns inside each cell and replace the cell’s contents with the matche
 
 ## Screenshots
 
-<img src="assets/full_screen.png" alt="Text Power Tools sidebar overview" width="640" />
 
-<img src="assets/1.png" alt="Text Power Tools screenshot 1" width="280" />
+<img src="website/public/assets/store_screenshots/main.jpg" alt="Text Power Tools sidebar overview" width="640" />
 
-<img src="assets/2.png" alt="Text Power Tools screenshot 2" width="280" />
+<img src="website/public/assets/store_screenshots/1.jpg" alt="Text Power Tools screenshot 1" width="280" />
 
-<img src="assets/3.png" alt="Text Power Tools screenshot 3" width="280" />
+<img src="website/public/assets/store_screenshots/2.jpg" alt="Text Power Tools screenshot 2" width="280" />
 
-<img src="assets/4.png" alt="Text Power Tools screenshot 4" width="280" />
+<img src="website/public/assets/store_screenshots/3.jpg" alt="Text Power Tools screenshot 3" width="280" />
+
+<img src="website/public/assets/store_screenshots/4.jpg" alt="Text Power Tools screenshot 4" width="280" />
 
 
 ## Author
