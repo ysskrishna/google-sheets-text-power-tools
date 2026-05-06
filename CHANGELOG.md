@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to **Merge Tools** are documented in this file.
+All notable changes to **Text Power Tools** are documented in this file.
 
 The same content is shown on the [Changelog page](https://ysskrishna.github.io/google-sheets-text-power-tools/changelog.html).
 
