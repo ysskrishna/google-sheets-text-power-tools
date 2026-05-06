@@ -1,6 +1,6 @@
 # Text Power Tools for Google Sheets
 
-[![GitHub](https://img.shields.io/badge/GitHub-222?style=flat-square&logo=github)](https://github.com/ysskrishna/google-sheets-text-power-tools) [![Product page](https://img.shields.io/badge/Product%20page-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://www.ysskrishna.space/google-sheets-text-power-tools/) [![More add-ons](https://img.shields.io/badge/More%20Workspace%20add--ons-222?style=flat-square)](https://ysskrishna.vercel.app/products?category=google-workspace-add-ons)
+[![GitHub](https://img.shields.io/badge/GitHub-222?style=flat-square&logo=github)](https://github.com/ysskrishna/google-sheets-text-power-tools) [![Text Power Tools - Examples Workbook](https://img.shields.io/badge/Examples%20Workbook-34A853?style=flat-square&logo=googlesheets&logoColor=white)](https://docs.google.com/spreadsheets/d/1p-LPVYDIBFqkboDQUUswc8-F2ZEEDQ7jtP15WJ4dWSU/edit?usp=sharing) [![Product page](https://img.shields.io/badge/Product%20page-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://www.ysskrishna.space/google-sheets-text-power-tools/) [![More add-ons](https://img.shields.io/badge/More%20Workspace%20add--ons-222?style=flat-square)](https://ysskrishna.vercel.app/products?category=google-workspace-add-ons)
 
 Text Power Tools is a Google Sheets add-on for cleaning and reshaping text directly in your spreadsheet. Select any range, open the sidebar, and apply case changes, insert or strip characters, or extract emails, URLs, dates, and more—without leaving the sheet.
 
@@ -99,4 +99,4 @@ Find patterns inside each cell and replace the cell’s contents with the matche
 
 Built and maintained by **Y. Siva Sai Krishna**.
 
-[Author's GitHub](https://github.com/ysskrishna) • [Author's LinkedIn](https://www.linkedin.com/in/ysskrishna) • [Product page](https://www.ysskrishna.space/google-sheets-text-power-tools/) • [Repository](https://github.com/ysskrishna/google-sheets-text-power-tools)
+[Author's GitHub](https://github.com/ysskrishna) • [Author's LinkedIn](https://www.linkedin.com/in/ysskrishna) • [Product page](https://www.ysskrishna.space/google-sheets-text-power-tools/) • [Repository](https://github.com/ysskrishna/google-sheets-text-power-tools) • [Text Power Tools - Examples Workbook](https://docs.google.com/spreadsheets/d/1p-LPVYDIBFqkboDQUUswc8-F2ZEEDQ7jtP15WJ4dWSU/edit?usp=sharing)
