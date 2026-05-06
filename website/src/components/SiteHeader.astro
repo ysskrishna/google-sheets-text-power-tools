@@ -1,0 +1,149 @@
+---
+import type { NavKey } from '../nav';
+import { siteBasePath } from '../paths';
+
+interface Props {
+  navKey: NavKey;
+}
+
+const { navKey } = Astro.props;
+
+const githubRepoUrl = 'https://github.com/ysskrishna/google-sheets-text-power-tools';
+const googleMarketplaceUrl =
+  'https://www.ysskrishna.space/google-sheets-text-power-tools/';
+/** Other Google Workspace add-ons (author products catalog). */
+const workspaceAddOnsUrl =
+  'https://ysskrishna.vercel.app/products?category=google-workspace-add-ons';
+---
+
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href={siteBasePath} aria-current={navKey === 'home' ? 'page' : undefined}>
+      <img src={`${siteBasePath}assets/logos/icon48.png`} alt="" width="48" height="48" />
+      <span>Text Power Tools</span>
+    </a>
+    <button
+      type="button"
+      class="site-nav__toggle"
+      aria-expanded="false"
+      aria-controls="site-nav-menu"
+      aria-label="Open menu"
+    >
+      <span class="site-nav__burger" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+    <nav class="site-nav" id="site-nav-menu" aria-label="Main">
+      <div class="site-nav__ctas">
+        <a
+          class="site-nav__cta site-nav__cta--github"
+          href={githubRepoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="site-nav__cta-icon site-nav__cta-icon--monochrome"
+            src={`${siteBasePath}assets/icons/github.svg`}
+            alt=""
+            width="17"
+            height="17"
+            decoding="async"
+          />
+          <span>GitHub</span>
+        </a>
+
+        <a
+          class="site-nav__cta site-nav__cta--sheets"
+          href={googleMarketplaceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="site-nav__cta-icon site-nav__cta-icon--monochrome"
+            src={`${siteBasePath}assets/icons/google-sheets.svg`}
+            alt=""
+            width="17"
+            height="17"
+            decoding="async"
+          />
+          <span>Product page</span>
+        </a>
+        <a
+          class="site-nav__cta site-nav__cta--addons"
+          href={workspaceAddOnsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="site-nav__cta-icon"
+            src={`${siteBasePath}assets/icons/google.svg`}
+            alt=""
+            width="17"
+            height="17"
+            decoding="async"
+          />
+          <span>Explore More add-ons</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const MQ = '(max-width: 42rem)';
+
+  function initSiteHeader() {
+    const header = document.getElementById('site-header');
+    const toggle = header?.querySelector<HTMLButtonElement>('.site-nav__toggle');
+    const nav = document.getElementById('site-nav-menu');
+    if (!header || !toggle || !nav) return;
+
+    const mql = window.matchMedia(MQ);
+
+    function setOpen(open: boolean) {
+      header.classList.toggle('site-header--nav-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.body.classList.toggle('site-nav-open-body', open && mql.matches);
+    }
+
+    function closeIfMobile() {
+      if (mql.matches) setOpen(false);
+    }
+
+    toggle.addEventListener('click', () => {
+      if (!mql.matches) return;
+      const next = !header.classList.contains('site-header--nav-open');
+      setOpen(next);
+      if (next) {
+        const first = nav.querySelector<HTMLAnchorElement>('a');
+        first?.focus();
+      }
+    });
+
+    nav.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('a')) closeIfMobile();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeIfMobile();
+    });
+
+    document.addEventListener(
+      'click',
+      (e) => {
+        if (!mql.matches || !header.classList.contains('site-header--nav-open')) return;
+        if (!header.contains(e.target as Node)) closeIfMobile();
+      },
+      true
+    );
+
+    mql.addEventListener('change', () => {
+      if (!mql.matches) setOpen(false);
+    });
+  }
+
+  initSiteHeader();
+</script>

@@ -1,0 +1,232 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteBasePath } from '../paths';
+
+const site = 'https://ysskrishna.github.io/google-sheets-text-power-tools';
+const ogImage = `${site}/assets/store_screenshots/main.jpg`;
+const examplesWorkbookUrl =
+  'https://docs.google.com/spreadsheets/d/1p-LPVYDIBFqkboDQUUswc8-F2ZEEDQ7jtP15WJ4dWSU/edit?usp=sharing';
+const productPageUrl = 'https://www.ysskrishna.space/google-sheets-text-power-tools/';
+const websiteBadgeSrc =
+  'https://img.shields.io/badge/Homepage-222?style=flat-square&logo=githubpages';
+const productPageBadgeSrc =
+  'https://img.shields.io/badge/Product%20Page-4285F4?style=flat-square&logo=googlechrome&logoColor=white';
+const examplesWorkbookBadgeSrc =
+  'https://img.shields.io/badge/Text%20Power%20Tools%20%E2%80%94%20Examples%20Workbook-0F9D58?style=flat-square&logo=googlesheets&logoColor=white';
+
+const ldJson = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${site}/#website`,
+      name: 'Text Power Tools',
+      url: `${site}/`,
+      description:
+        'Google Sheets add-on for cleaning and reshaping text with case changes, insertion helpers, cleanup actions, and pattern extraction.',
+      publisher: { '@id': `${site}/#author` },
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Text Power Tools',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      url: `${site}/`,
+      description:
+        'Transform selected Google Sheets text with case conversion, prefix and suffix insertion, character cleanup, and extraction presets.',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+      author: { '@id': `${site}/#author` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${site}/#author`,
+      name: 'Y. Siva Sai Krishna',
+      url: 'https://github.com/ysskrishna',
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Text Power Tools"
+  description="Google Sheets add-on to clean and transform text in place with case conversion, insertion, cleanup, and extraction tools."
+  canonical={`${site}/`}
+  navKey="home"
+  mainClass="site-main--home"
+  ogTitle="Text Power Tools"
+  ogDescription="Clean, reshape, and extract text in Google Sheets with practical one-click tools."
+  ogUrl={`${site}/`}
+  ogImage={ogImage}
+  twitterCard="summary_large_image"
+  twitterImage={ogImage}
+  ldJson={ldJson}
+>
+  <div class="hero">
+    <h1>Text Power Tools</h1>
+    <p class="lede">
+      A practical Google Sheets add-on for cleaning and reshaping text directly in your spreadsheet.
+    </p>
+    <p class="promo-badges">
+      <a href={productPageUrl} rel="noopener noreferrer">
+        <img src={productPageBadgeSrc} height="20" alt="Product page" loading="lazy" />
+      </a>
+      <a href={site} rel="noopener noreferrer">
+        <img src={websiteBadgeSrc} height="20" alt="Homepage" loading="lazy" />
+      </a>
+      <a href={examplesWorkbookUrl} rel="noopener noreferrer">
+        <img
+          src={examplesWorkbookBadgeSrc}
+          height="20"
+          alt="Text Power Tools — Examples Workbook"
+          loading="lazy"
+        />
+      </a>
+    </p>
+  </div>
+
+  <h2>Key Features</h2>
+
+  <section class="feature-card">
+    <h3>Case</h3>
+    <p>Convert capitalization formats in one click, from everyday formats to developer-friendly naming styles.</p>
+    <ul>
+      <li><strong>Common modes:</strong> Sentence case, Capitalized Case, lower case, UPPER CASE, iNVERT cASE.</li>
+      <li><strong>Advanced modes:</strong> camelCase, PascalCase, snake_case, kebab-case, dot.case, and more.</li>
+    </ul>
+  </section>
+
+  <section class="feature-card">
+    <h3>Insert</h3>
+    <p>Add or inject text without writing formulas.</p>
+    <ul>
+      <li><strong>Prefix and suffix:</strong> Add text before, after, or both.</li>
+      <li><strong>Insert at position:</strong> Place text at a 1-based character index.</li>
+    </ul>
+  </section>
+
+  <section class="feature-card">
+    <h3>Clean</h3>
+    <p>Standardize messy values with quick cleanup actions.</p>
+    <ul>
+      <li><strong>Whitespace controls:</strong> Trim start, end, or both sides.</li>
+      <li><strong>Keep or remove:</strong> Keep letters or digits, remove digits, or keep alphanumeric only.</li>
+      <li><strong>Strip specific chars:</strong> Remove every occurrence of characters you provide.</li>
+    </ul>
+  </section>
+
+  <section class="feature-card">
+    <h3>Extract</h3>
+    <p>Find and keep only useful patterns from cell text.</p>
+    <ul>
+      <li><strong>Presets:</strong> Emails, URLs, phone numbers, hashtags, mentions, dates, and time values.</li>
+      <li><strong>Custom regex:</strong> Bring your own pattern with join delimiter and unique-match options.</li>
+    </ul>
+  </section>
+
+  <h2 class="examples-workbook__title">
+    <a href={examplesWorkbookUrl} rel="noopener noreferrer">Text Power Tools — Examples Workbook</a>
+  </h2>
+  <section class="feature-card examples-workbook" aria-label="Text Power Tools — Examples Workbook">
+    <p>
+      The public workbook demonstrates real <strong>Before → After</strong> results for major transformations.
+    </p>
+    <div class="examples-workbook__table-wrap" tabindex="0">
+      <table class="examples-workbook__table">
+        <caption class="visually-hidden">Example sheets and what each demonstrates</caption>
+        <thead>
+          <tr>
+            <th scope="col">Sheet (tab)</th>
+            <th scope="col">What it shows</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Case</code></td>
+            <td>Case conversion examples from sentence case to coding-friendly formats</td>
+          </tr>
+          <tr>
+            <td><code>Insert</code></td>
+            <td>Prefix, suffix, and insert-at-position transformations</td>
+          </tr>
+          <tr>
+            <td><code>Clean</code></td>
+            <td>Trimming whitespace and filtering/removing selected character classes</td>
+          </tr>
+          <tr>
+            <td><code>Extract</code></td>
+            <td>Pattern extraction for emails, URLs, hashtags, dates, and custom regex</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <h2>Why users love Text Power Tools</h2>
+  <ul>
+    <li>Speeds up repetitive text cleanup directly inside Google Sheets.</li>
+    <li>Keeps workflows formula-free for common text transformations.</li>
+    <li>Works on selected ranges with predictable in-place updates.</li>
+    <li>Combines cleanup and extraction in a compact sidebar UI.</li>
+  </ul>
+
+  <section class="screenshots" aria-label="Screenshots">
+    <h2>Screenshots</h2>
+    <div class="screenshots-scroll" tabindex="0" aria-label="Scroll to see all screenshots">
+      <figure>
+        <img
+          src={`${siteBasePath}assets/store_screenshots/main.jpg`}
+          alt="Text Power Tools main view"
+          width="1920"
+          height="1080"
+          loading="lazy"
+        />
+        <figcaption>Main</figcaption>
+      </figure>
+      <figure>
+        <img
+          src={`${siteBasePath}assets/store_screenshots/1.jpg`}
+          alt="Text Power Tools screenshot 1"
+          width="1080"
+          height="1920"
+          loading="lazy"
+        />
+        <figcaption>1</figcaption>
+      </figure>
+      <figure>
+        <img
+          src={`${siteBasePath}assets/store_screenshots/2.jpg`}
+          alt="Text Power Tools screenshot 2"
+          width="1080"
+          height="1920"
+          loading="lazy"
+        />
+        <figcaption>2</figcaption>
+      </figure>
+      <figure>
+        <img
+          src={`${siteBasePath}assets/store_screenshots/3.jpg`}
+          alt="Text Power Tools screenshot 3"
+          width="1080"
+          height="1920"
+          loading="lazy"
+        />
+        <figcaption>3</figcaption>
+      </figure>
+      <figure>
+        <img
+          src={`${siteBasePath}assets/store_screenshots/4.jpg`}
+          alt="Text Power Tools screenshot 4"
+          width="1080"
+          height="1920"
+          loading="lazy"
+        />
+        <figcaption>4</figcaption>
+      </figure>
+    </div>
+  </section>
+</BaseLayout>

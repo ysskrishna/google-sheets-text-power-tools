@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteBasePath } from '../paths';
+
+const site = 'https://ysskrishna.github.io/google-sheets-text-power-tools';
+const pageUrl = `${site}/terms.html`;
+
+const ldJson = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${site}/#website`,
+      name: 'Text Power Tools',
+      url: `${site}/`,
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${pageUrl}#webpage`,
+      name: 'Terms of Service — Text Power Tools',
+      description:
+        'Terms of Service for Text Power Tools covering acceptable use, limitations, and user responsibilities.',
+      url: pageUrl,
+      isPartOf: { '@id': `${site}/#website` },
+      inLanguage: 'en',
+      dateModified: '2026-04-13',
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Terms of Service — Text Power Tools"
+  description="Terms of Service for Text Power Tools covering acceptable use, limitations, and user responsibilities."
+  canonical={pageUrl}
+  navKey="terms"
+  mainClass="site-main--inner"
+  ogTitle="Terms of Service — Text Power Tools"
+  ogDescription="Terms of Service for the Text Power Tools Google Sheets add-on."
+  ogUrl={pageUrl}
+  twitterCard="summary"
+  ldJson={ldJson}
+>
+  <h1 class="page-title">Terms of Service</h1>
+  <p><strong>Last updated:</strong> April 13, 2026</p>
+
+  <h2>1. Acceptance of Terms</h2>
+  <p>By installing or using Text Power Tools, you agree to these Terms of Service.</p>
+
+  <h2>2. Service Description</h2>
+  <p>
+    Text Power Tools is a Google Sheets add-on that helps users clean and transform selected text values with
+    configurable behavior such as case conversion, insertion actions, cleanup rules, and extraction options.
+  </p>
+
+  <h2>3. Permitted Use</h2>
+  <p>You agree to use the add-on in compliance with applicable laws, regulations, and Google Workspace policies.</p>
+  <p>You are responsible for reviewing all resulting changes before applying them to production spreadsheets.</p>
+
+  <h2>4. User Responsibility and Assumption of Risk</h2>
+  <p>You are solely responsible for validating worksheet output before and after text transformation operations.</p>
+  <p>
+    Since bulk text changes can alter worksheet content at scale, you should keep your own backups and revision
+    strategy. You use this add-on at your own risk.
+  </p>
+
+  <h2>5. Availability and Changes</h2>
+  <p>
+    Features may be added, changed, or removed at any time to improve usability, reliability, or policy compliance.
+  </p>
+
+  <h2>6. Disclaimer of Warranties</h2>
+  <p>
+    The add-on is provided on an "as is" and "as available" basis without warranties of any kind, express or implied,
+    including merchantability, fitness for a particular purpose, and non-infringement.
+  </p>
+
+  <h2>7. Limitation of Liability</h2>
+  <p>
+    To the maximum extent permitted by law, the developer is not liable for direct, indirect, incidental, special, or
+    consequential damages, including data loss, business interruption, or productivity loss related to use of the
+    add-on.
+  </p>
+
+  <h2>8. Termination</h2>
+  <p>
+    You may stop using the add-on at any time by uninstalling it. Access may be suspended or terminated in cases of
+    abuse or policy violations.
+  </p>
+
+  <h2>9. Privacy</h2>
+  <p>Your use of the add-on is also governed by the <a href={`${siteBasePath}privacy.html`}>Privacy Policy</a>.</p>
+
+  <h2>10. Support</h2>
+  <p>For questions or support, please visit the <a href={`${siteBasePath}support.html`}>Support page</a>.</p>
+
+  <h2>11. No Affiliation</h2>
+  <p>This add-on is an independent project and is not affiliated with, endorsed by, or sponsored by Google LLC.</p>
+</BaseLayout>

@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const site = 'https://ysskrishna.github.io/google-sheets-text-power-tools';
+const pageUrl = `${site}/privacy.html`;
+
+const ldJson = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${site}/#website`,
+      name: 'Text Power Tools',
+      url: `${site}/`,
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${pageUrl}#webpage`,
+      name: 'Privacy Policy — Text Power Tools',
+      description:
+        'Privacy Policy for Text Power Tools explaining accessed data, processing behavior, and data handling boundaries.',
+      url: pageUrl,
+      isPartOf: { '@id': `${site}/#website` },
+      inLanguage: 'en',
+      dateModified: '2026-04-13',
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Privacy Policy — Text Power Tools"
+  description="Privacy Policy for Text Power Tools explaining accessed data, processing behavior, and data handling boundaries."
+  canonical={pageUrl}
+  navKey="privacy"
+  mainClass="site-main--inner"
+  ogTitle="Privacy Policy — Text Power Tools"
+  ogDescription="Privacy Policy for the Text Power Tools Google Sheets add-on."
+  ogUrl={pageUrl}
+  twitterCard="summary"
+  ldJson={ldJson}
+>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p><strong>Last updated:</strong> April 13, 2026</p>
+
+  <h2>Overview</h2>
+  <p>
+    Text Power Tools is a Google Sheets add-on used to clean, transform, and extract text from selected spreadsheet
+    cells based on actions initiated by the user.
+  </p>
+
+  <h2>Information Accessed</h2>
+  <p>
+    The add-on accesses spreadsheet values and structure only for the currently open spreadsheet and only when you run
+    an action from the sidebar.
+  </p>
+  <p>
+    It requests only the minimum Google permissions required to read and update selected ranges and to render the
+    add-on user interface.
+  </p>
+
+  <h2>How Information Is Used</h2>
+  <p>
+    Data is used only to complete requested operations in your spreadsheet, such as changing case, inserting prefixes
+    and suffixes, cleaning characters, or extracting matching patterns.
+  </p>
+  <ul>
+    <li>No spreadsheet content is sold.</li>
+    <li>No spreadsheet content is used for advertising.</li>
+    <li>No spreadsheet content is intentionally sent to third-party external servers by this add-on.</li>
+  </ul>
+
+  <h2>Storage and Retention</h2>
+  <p>
+    The add-on is designed to process data within Google services and does not maintain a separate external database of
+    your spreadsheet content.
+  </p>
+  <p>
+    Basic operational logs may exist through Google Cloud platform services for reliability and debugging. These logs
+    are accessed only when required for maintenance and support.
+  </p>
+
+  <h2>Third-Party Sharing</h2>
+  <p>
+    Spreadsheet content is not shared with third parties except where required by law or by normal Google platform
+    operations.
+  </p>
+
+  <h2>Security</h2>
+  <p>
+    Reasonable technical and organizational safeguards are applied, but no method of transmission or storage is
+    completely risk-free.
+  </p>
+
+  <h2>Your Choices</h2>
+  <p>You can stop using the add-on at any time by uninstalling it from Google Workspace Marketplace.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>The latest version of this policy is always published on this page with an updated date.</p>
+</BaseLayout>
