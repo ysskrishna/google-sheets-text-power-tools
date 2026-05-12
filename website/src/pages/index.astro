@@ -7,12 +7,20 @@ const ogImage = `${site}/assets/store_screenshots/main.jpg`;
 const examplesWorkbookUrl =
   'https://docs.google.com/spreadsheets/d/1p-LPVYDIBFqkboDQUUswc8-F2ZEEDQ7jtP15WJ4dWSU/edit?usp=sharing';
 const productPageUrl = 'https://www.ysskrishna.space/google-sheets-text-power-tools/';
+const marketplaceUrl =
+  'https://workspace.google.com/marketplace/app/text_power_tools/808208635694';
+const repositoryUrl = 'https://github.com/ysskrishna/google-sheets-text-power-tools';
+const authorGitHubUrl = 'https://github.com/ysskrishna';
+const authorLinkedInUrl = 'https://www.linkedin.com/in/ysskrishna';
+
+const addToSheetsBadgeSrc =
+  'https://img.shields.io/badge/-Add%20to%20Google%20Sheets-0F9D58?style=flat-square&logo=googlesheets&logoColor=white';
 const websiteBadgeSrc =
   'https://img.shields.io/badge/Homepage-222?style=flat-square&logo=githubpages';
-const productPageBadgeSrc =
-  'https://img.shields.io/badge/Product%20Page-4285F4?style=flat-square&logo=googlechrome&logoColor=white';
 const examplesWorkbookBadgeSrc =
   'https://img.shields.io/badge/Text%20Power%20Tools%20%E2%80%94%20Examples%20Workbook-0F9D58?style=flat-square&logo=googlesheets&logoColor=white';
+const repositoryBadgeSrc =
+  'https://img.shields.io/badge/Repository-181717?style=flat-square&logo=github&logoColor=white';
 
 const ldJson = {
   '@context': 'https://schema.org',
@@ -46,7 +54,8 @@ const ldJson = {
       '@type': 'Person',
       '@id': `${site}/#author`,
       name: 'Y. Siva Sai Krishna',
-      url: 'https://github.com/ysskrishna',
+      url: authorGitHubUrl,
+      sameAs: [authorGitHubUrl, authorLinkedInUrl],
     },
   ],
 };
@@ -72,10 +81,15 @@ const ldJson = {
       A practical Google Sheets add-on for cleaning and reshaping text directly in your spreadsheet.
     </p>
     <p class="promo-badges">
-      <a href={productPageUrl} rel="noopener noreferrer">
-        <img src={productPageBadgeSrc} height="20" alt="Product page" loading="lazy" />
+      <a href={marketplaceUrl} rel="noopener noreferrer">
+        <img
+          src={addToSheetsBadgeSrc}
+          height="20"
+          alt="Add to Google Sheets"
+          loading="lazy"
+        />
       </a>
-      <a href={site} rel="noopener noreferrer">
+      <a href={productPageUrl} rel="noopener noreferrer">
         <img src={websiteBadgeSrc} height="20" alt="Homepage" loading="lazy" />
       </a>
       <a href={examplesWorkbookUrl} rel="noopener noreferrer">
@@ -85,6 +99,9 @@ const ldJson = {
           alt="Text Power Tools — Examples Workbook"
           loading="lazy"
         />
+      </a>
+      <a href={repositoryUrl} rel="noopener noreferrer">
+        <img src={repositoryBadgeSrc} height="20" alt="Repository" loading="lazy" />
       </a>
     </p>
   </div>
