@@ -1,6 +1,6 @@
 # Text Power Tools for Google Sheets
 
-[![Add to Google Sheets](https://img.shields.io/badge/-Add%20to%20Google%20Sheets-0F9D58?style=flat-square&logo=googlesheets&logoColor=white)](https://workspace.google.com/marketplace/app/text_power_tools/808208635694) [![Documentation](https://img.shields.io/badge/Documentation-0969DA?style=flat-square&logo=githubpages&logoColor=white)](https://ysskrishna.github.io/google-sheets-text-power-tools/) [![Product page](https://img.shields.io/badge/Product%20page-0D9488?style=flat-square)](https://www.ysskrishna.space/products/60-google-sheets-text-power-tools) [![More Google Workspace add-ons](https://img.shields.io/badge/More%20Google%20Workspace%20add--ons-4285F4?style=flat-square&logo=google&logoColor=white)](https://www.ysskrishna.space/products?category=google-workspace-add-ons) [![Text Power Tools — Examples Workbook](https://img.shields.io/badge/Text%20Power%20Tools%20%E2%80%94%20Examples%20Workbook-0F9D58?style=flat-square&logo=googlesheets&logoColor=white)](https://docs.google.com/spreadsheets/d/1p-LPVYDIBFqkboDQUUswc8-F2ZEEDQ7jtP15WJ4dWSU/edit?usp=sharing) [![Text Power Tools blog](https://img.shields.io/badge/Text%20Power%20Tools%20blog-DB2777?style=flat-square)](https://www.ysskrishna.space/blog/tag/google-sheets-text-power-tools)
+[![Add to Google Sheets](https://img.shields.io/badge/-Add%20to%20Google%20Sheets-0F9D58?style=flat-square&logo=googlesheets&logoColor=white)](https://workspace.google.com/marketplace/app/text_power_tools/808208635694) [![Documentation](https://img.shields.io/badge/Documentation-0969DA?style=flat-square&logo=githubpages&logoColor=white)](https://ysskrishna.github.io/google-sheets-text-power-tools/) [![Product page](https://img.shields.io/badge/Product%20page-0D9488?style=flat-square)](https://www.ysskrishna.space/products/60-google-sheets-text-power-tools) [![More Google Workspace add-ons](https://img.shields.io/badge/More%20Google%20Workspace%20add--ons-4285F4?style=flat-square&logo=google&logoColor=white)](https://www.ysskrishna.space/products?category=google-workspace-add-ons) [![Text Power Tools — Examples Workbook](https://img.shields.io/badge/Text%20Power%20Tools%20%E2%80%94%20Examples%20Workbook-0F9D58?style=flat-square&logo=googlesheets&logoColor=white)](https://docs.google.com/spreadsheets/d/1p-LPVYDIBFqkboDQUUswc8-F2ZEEDQ7jtP15WJ4dWSU/edit?usp=sharing) [![Text Power Tools blog](https://img.shields.io/badge/Text%20Power%20Tools%20blog-DB2777?style=flat-square)](https://www.ysskrishna.space/blog/tag/google-sheets-text-power-tools) [![Author site](https://img.shields.io/badge/author-ysskrishna.space-informational)](https://ysskrishna.space)
 
 Text Power Tools is a Google Sheets add-on for cleaning and reshaping text directly in your spreadsheet. Select any range, open the sidebar, and apply case changes, insert or strip characters, or extract emails, URLs, dates, and more—without leaving the sheet.
 
@@ -95,9 +95,43 @@ Find patterns inside each cell and replace the cell’s contents with the matche
 
 <img src="website/public/assets/store_screenshots/4.jpg" alt="Text Power Tools screenshot 4" width="280" />
 
+## Built and maintained by
 
-## Author
+Text Power Tools for Google Sheets is built and maintained by:
 
-Built and maintained by **Y. Siva Sai Krishna**.
+| | Name | GitHub | Role |
+|---|------|--------|------|
+| <img src="https://github.com/ysskrishna.png?size=120" width="60" height="60" alt="Y. Siva Sai Krishna"> | **Y. Siva Sai Krishna** | [@ysskrishna](https://github.com/ysskrishna) | Creator |
 
-[Author's GitHub](https://github.com/ysskrishna) • [Author's LinkedIn](https://www.linkedin.com/in/ysskrishna) • [Add to Google Sheets](https://workspace.google.com/marketplace/app/text_power_tools/808208635694) • [Documentation](https://ysskrishna.github.io/google-sheets-text-power-tools/) • [Product page](https://www.ysskrishna.space/products/60-google-sheets-text-power-tools) • [More Google Workspace add-ons](https://www.ysskrishna.space/products?category=google-workspace-add-ons) • [Text Power Tools blog](https://www.ysskrishna.space/blog/tag/google-sheets-text-power-tools) • [Repository](https://github.com/ysskrishna/google-sheets-text-power-tools) • [Text Power Tools — Examples Workbook](https://docs.google.com/spreadsheets/d/1p-LPVYDIBFqkboDQUUswc8-F2ZEEDQ7jtP15WJ4dWSU/edit?usp=sharing)
+## Changelog
+
+See [CHANGELOG](CHANGELOG.md) for release history.
+
+## Support
+
+If you find this project helpful:
+
+- ⭐ Star the repository
+- 🐛 [Report issues](https://github.com/ysskrishna/google-sheets-text-power-tools/issues)
+- 🔀 Submit pull requests
+- 💝 [Sponsor on GitHub](https://github.com/sponsors/ysskrishna)
+
+## License
+
+TODO(siva): this repository has no LICENSE file yet, so the code is "all rights reserved" by default. Pick a license (the optional `0005-license.patch` adds MIT) and replace this line, e.g. with: MIT © [Y. Siva Sai Krishna](https://github.com/ysskrishna) — see [LICENSE](LICENSE) for details.
+
+---
+
+<p align="left">
+  <a href="https://github.com/ysskrishna">Author's GitHub</a> •
+  <a href="https://linkedin.com/in/ysskrishna">Author's LinkedIn</a> •
+  <a href="https://ysskrishna.space">Author's site</a> •
+  <a href="https://workspace.google.com/marketplace/app/text_power_tools/808208635694">Add to Google Sheets</a> •
+  <a href="https://ysskrishna.github.io/google-sheets-text-power-tools/">Documentation</a> •
+  <a href="https://www.ysskrishna.space/products/60-google-sheets-text-power-tools">Product page</a> •
+  <a href="https://www.ysskrishna.space/products?category=google-workspace-add-ons">More Google Workspace add-ons</a> •
+  <a href="https://www.ysskrishna.space/blog/tag/google-sheets-text-power-tools">Text Power Tools blog</a> •
+  <a href="https://github.com/ysskrishna/google-sheets-text-power-tools">Repository</a> •
+  <a href="https://docs.google.com/spreadsheets/d/1p-LPVYDIBFqkboDQUUswc8-F2ZEEDQ7jtP15WJ4dWSU/edit?usp=sharing">Text Power Tools — Examples Workbook</a> •
+  <a href="https://github.com/ysskrishna/google-sheets-text-power-tools/issues">Report Issues</a>
+</p>
