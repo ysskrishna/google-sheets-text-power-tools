@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteBasePath } from '../../paths';
+
+const site = 'https://ysskrishna.github.io/google-sheets-text-power-tools';
+const pageUrl = `${site}/how-to/change-case.html`;
+const screenshotSrc = `${siteBasePath}assets/store_screenshots/1.jpg`;
+
+const ldJson = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'HowTo',
+      '@id': `${pageUrl}#howto`,
+      name: 'How to change case in Google Sheets',
+      description:
+        'Change the case of selected cells in Google Sheets with Text Power Tools, without nesting UPPER, LOWER, or PROPER formulas.',
+      url: pageUrl,
+      inLanguage: 'en',
+      step: [
+        { '@type': 'HowToStep', position: 1, text: 'Select the cells you want to change.' },
+        { '@type': 'HowToStep', position: 2, text: 'Choose Text Power Tools > Start in the menu bar.' },
+        { '@type': 'HowToStep', position: 3, text: 'Open the Case tab.' },
+        { '@type': 'HowToStep', position: 4, text: 'Pick a case.' },
+        { '@type': 'HowToStep', position: 5, text: 'Click Apply.' },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="How to change case in Google Sheets - Text Power Tools"
+  description="Change text case in Google Sheets in one click with Text Power Tools, instead of nesting UPPER, LOWER, and PROPER formulas."
+  canonical={pageUrl}
+  navKey="how-to"
+  mainClass="site-main--inner"
+  ogTitle="How to change case in Google Sheets"
+  ogDescription="Change text case in Google Sheets in one click, without nesting UPPER, LOWER, or PROPER formulas."
+  ogUrl={pageUrl}
+  twitterCard="summary_large_image"
+  twitterImage={screenshotSrc}
+  ldJson={ldJson}
+>
+  <h1 class="page-title">How to change case in Google Sheets</h1>
+  <p>
+    Changing text case in Google Sheets often means nesting UPPER, LOWER, and PROPER formulas, then copying the results
+    back over your data. Text Power Tools changes the case of selected cells in one click.
+  </p>
+
+  <h2>Steps</h2>
+  <ol>
+    <li>Open your spreadsheet and select the cells you want to change.</li>
+    <li>In the menu bar, choose <strong>Text Power Tools &gt; Start</strong>. The sidebar opens.</li>
+    <li>Open the <strong>Case</strong> tab.</li>
+    <li>
+      Pick a case, such as <strong>Sentence case</strong>, <strong>Capitalized Case</strong>, <strong>lower case</strong>,
+      <strong>UPPER CASE</strong>, or <strong>iNVERT cASE</strong>. The advanced list includes code-style cases such as
+      <strong>camelCase</strong>, <strong>snake_case</strong>, and <strong>kebab-case</strong>.
+    </li>
+    <li>Click <strong>Apply</strong>.</li>
+  </ol>
+
+  <figure>
+    <img
+      src={screenshotSrc}
+      alt="Text Power Tools sidebar on the Case tab, showing Sentence case, Capitalized Case, lower case, UPPER CASE, and iNVERT cASE"
+      width="1080"
+      height="1920"
+      loading="lazy"
+    />
+    <figcaption>The Case tab in the Text Power Tools sidebar.</figcaption>
+  </figure>
+
+  <p>
+    The change runs on the active selection and uses the text you see in each cell. The result is written back into
+    those cells.
+  </p>
+</BaseLayout>
